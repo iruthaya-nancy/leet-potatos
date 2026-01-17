@@ -3,18 +3,17 @@ class Solution {
         /**
           To avoid the duplicate characters we can use the hashset
          */
-      Set<Character> set = new HashSet<>();
-    int left = 0, maxLen = 0;
-    
-    for (int right = 0; right < s.length(); right++) {
-        while (set.contains(s.charAt(right))) {
-            set.remove(s.charAt(left));
-            left++;
-        }
-        set.add(s.charAt(right));
-        maxLen = Math.max(maxLen, right - left + 1);
+        HashSet<Character> value = new HashSet<>();
+        int left = 0;
+        int maxLen = 0;
+        for(int r = 0 ; r<s.length();r++){
+            while(value.contains(s.charAt(r))){
+                value.remove(s.charAt(left));
+                left++;
+            }
+            value.add(s.charAt(r));
+            maxLen = Math.max(maxLen,r-left+1);
+        } 
+        return maxLen;
     }
-    return maxLen;
-    }
-
 }
