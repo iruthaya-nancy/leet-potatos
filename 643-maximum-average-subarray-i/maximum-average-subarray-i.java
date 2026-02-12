@@ -4,7 +4,9 @@ class Solution {
         To find the max average with the window size of k
         1.  Sum the values till the k length
         2. Then for the iteration intermediate values will be same and only one value will be added
-        and one will be removed */
+        and one will be removed 
+        NOTE :  when ever we are taking sum try to reuse that instead of going for
+        another iteration*/
         int sum = 0;
         for(int i = 0; i<k;i++ ){
             sum += nums[i];
